@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="413.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.digest.DigestController">
+    <children>
+        <Label layoutX="14.0" layoutY="12.0" text="Идентификатор системы (systemId)" />
+        <Label layoutX="14.0" layoutY="44.0" text="Уникальный идентификатор запроса (authRequestId)" />
+        <Label layoutX="14.0" layoutY="75.0" text="Момент формирования запроса (requestDate)" />
+        <Label layoutX="14.0" layoutY="105.0" text="Ключ хэширования (pwdHash)" />
+        <Label layoutX="14.0" layoutY="230.0" text="Digest" />
+
+        <TextField fx:id="systemId" layoutX="320.0" layoutY="8.0" prefHeight="25.0" prefWidth="438.0" />
+        <TextField fx:id="authRequestId" layoutX="320.0" layoutY="40.0" prefHeight="25.0" prefWidth="438.0" />
+        <TextField fx:id="requestDate" layoutX="320.0" layoutY="71.0" prefHeight="25.0" prefWidth="438.0" />
+        <TextField fx:id="pwdHash" layoutX="320.0" layoutY="103.0" prefHeight="25.0" prefWidth="438.0" />
+        <TextField fx:id="digest" alignment="CENTER" layoutX="124.0" layoutY="226.0" prefHeight="25.0" prefWidth="663.0">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></TextField>
+
+        <Button layoutX="476.0" layoutY="164.0" mnemonicParsing="false" onAction="#onGetDigestButtonClick" prefHeight="25.0" prefWidth="312.0" text="Сформировать digest">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Button>
+        <Button layoutX="320.0" layoutY="164.0" mnemonicParsing="false" onAction="#onClearButtonClick" prefHeight="25.0" prefWidth="145.0" text="Очистить все" />
+        <Button fx:id="btnClearSystemId" layoutX="765.0" layoutY="8.0" mnemonicParsing="false" onAction="#onClearFieldButtonClick" prefHeight="25.0" prefWidth="25.0" text="x" textAlignment="CENTER" />
+        <Button fx:id="btnClearAuthRequestId" layoutX="765.0" layoutY="40.0" mnemonicParsing="false" onAction="#onClearFieldButtonClick" prefHeight="25.0" prefWidth="25.0" text="x" textAlignment="CENTER" />
+        <Button fx:id="btnClearRequestDate" layoutX="765.0" layoutY="71.0" mnemonicParsing="false" onAction="#onClearFieldButtonClick" prefHeight="25.0" prefWidth="25.0" text="x" textAlignment="CENTER" />
+        <Button fx:id="btnClearAuthToken" layoutX="765.0" layoutY="103.0" mnemonicParsing="false" onAction="#onClearFieldButtonClick" prefHeight="25.0" prefWidth="25.0" text="x" textAlignment="CENTER" />
+
+        <CheckBox fx:id="autoCreate" layoutX="321.0" layoutY="135.0" mnemonicParsing="false" selected="true" text="Формировать поля для генерации автоматически" />
+        <Label layoutX="14.0" layoutY="259.0" text="XML-код запроса" />
+        <TextArea fx:id="requestXMLCode" layoutX="124.0" layoutY="259.0" prefHeight="145.0" prefWidth="663.0" />
+      <Separator layoutY="209.0" prefHeight="2.0" prefWidth="801.0" />
+    </children>
+</Pane>
